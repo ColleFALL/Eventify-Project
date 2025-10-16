@@ -1,35 +1,69 @@
 // src/pages/Auth/Login.jsx
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // <-- importé
+import { auth } from "../../../src/Firebase/FirebaseConfig";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 export default function Login() {
+  const navigate = useNavigate(); // <-- initialisation
   const [form, setForm] = useState({
     email: "",
     password: "",
   });
 
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
-    setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Connexion simulée :", form);
-    setMessage(`Connexion simulée pour ${form.email}`);
-    setForm({ email: "", password: "" });
+    setLoading(true);
+    setMessage("");
+
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        form.email,
+        form.password
+      );
+      const user = userCredential.user;
+
+      setMessage(`Bienvenue ${user.email} 🎉 Vous êtes connecté(e) !`);
+      setForm({ email: "", password: "" });
+    } catch (error) {
+      console.error("Erreur de connexion :", error);
+      let errorMsg = "Une erreur est survenue.";
+
+      if (error.code === "auth/user-not-found") {
+        errorMsg = "Utilisateur introuvable.";
+      } else if (error.code === "auth/wrong-password") {
+        errorMsg = "Mot de passe incorrect.";
+      } else if (error.code === "auth/invalid-email") {
+        errorMsg = "Email invalide.";
+      }
+
+      setMessage(errorMsg);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <div className="min-h-screen bg-orange-200 to-purple-100 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-orange-200 flex items-center justify-center p-4">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8">
         <h1 className="text-orange-400 font-bold text-center mb-4">Eventbrite</h1>
         <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">Connexion</h2>
 
-        {message && <div className="mb-4 p-3 bg-blue-100 text-blue-700 rounded-lg text-center">{message}</div>}
+        {message && (
+          <div className="mb-4 p-3 bg-blue-100 text-blue-700 rounded-lg text-center">
+            {message}
+          </div>
+        )}
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          {/* Email */}
           <input
             name="email"
             type="email"
@@ -40,7 +74,6 @@ export default function Login() {
             required
           />
 
-          {/* Mot de passe */}
           <input
             name="password"
             type="password"
@@ -51,17 +84,24 @@ export default function Login() {
             required
           />
 
-          {/* Bouton Se connecter */}
           <button
             type="submit"
+            disabled={loading}
             className="w-full py-3 mt-6 bg-orange-500 text-white font-semibold rounded-xl shadow-md hover:bg-orange-600 transition-all duration-300"
           >
-            Se connecter
+            {loading ? "Connexion en cours..." : "Se connecter"}
           </button>
         </form>
 
         <p className="mt-6 text-center text-gray-500">
-          Pas encore de compte ? <span className="text-blue-500 font-medium cursor-pointer">S'inscrire</span>
+          Pas encore de compte ?{" "}
+          <span
+            onClick={() => navigate("/register")}
+ // <-- lien actif vers Register
+            className="text-blue-500 font-medium cursor-pointer"
+          >
+            S'inscrire
+          </span>
         </p>
       </div>
     </div>

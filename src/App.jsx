@@ -1,13 +1,15 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./index.css";
-// import Register from "./Pages/Auth/Register";
+// src/App.jsx
+import { Routes, Route } from "react-router-dom";
+import Register from "./Pages/Auth/Register";
 import Login from "./Pages/Auth/Login";
-
 
 function App() {
   return (
-    // <Register/>
-    <Login/>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="*" element={<Login />} /> {/* Redirection par défaut */}
+      </Routes>
   );
 }
 
