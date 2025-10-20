@@ -73,7 +73,7 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen bg-orange-200 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-orange-300 flex items-center justify-center p-4">
       <div className="w-full max-w-lg bg-white rounded-2xl shadow-xl p-8">
         <h1 className="text-orange-400 font-bold text-center fs-6">Eventbrite</h1>
         <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">
