@@ -84,6 +84,14 @@ export default function Login() {
             required
           />
 
+          {/* champ mot de passe oublier */}
+
+         <p className="text-right text-sm mt-2 text-blue-500 hover:underline cursor-pointer"
+           onClick={() => navigate("/forgot-password")}>
+           Mot de passe oublié ?
+         </p>
+
+
           <button
             type="submit"
             disabled={loading}
