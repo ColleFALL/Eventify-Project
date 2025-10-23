@@ -10,7 +10,7 @@ export default function Section() {
   return (
     <div className="w-full h-250  flex flex-col justify-start items-start bg-gradient-to-r from-[ffb8e5] via-[#ff7d6d]  to-[#ff5112] gap-20 ">
       <div className="mt-6 px-10 w-full h-5 ">
-        <a href="#"> Home</a> <span> > </span> <a href="#"> Create Events </a>
+        <a href="#"> Home</a> <span>  </span> <a href="#"> Create Events </a>
       </div>
       
         {/* the big container */}
