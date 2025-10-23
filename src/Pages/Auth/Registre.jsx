@@ -3,6 +3,8 @@ import { UserIcon, EnvelopeIcon, LockClosedIcon } from "@heroicons/react/24/soli
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./firebaseConfig";
 
+
+
 export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
