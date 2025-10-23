@@ -1,4 +1,6 @@
 import react from "react";
+import { Link } from "react-router-dom";             
+
 
 export default function Section() {
   return (
@@ -21,12 +23,16 @@ export default function Section() {
           </span>
 
           <div className="mt-20 flex flex-row justify-start items-center">
+            <Link to="/create-event"> 
             <button className="bg-[#ff5010] text-white font-bold px-6 py-3 rounded-full border-2 border-[#ff5010] hover:bg-white hover:text-[#ff5010] transition duration-300 mr-5">
               Get Started for free
             </button>
+            </Link>
+            <Link to="/create-event"> 
             <button className="bg-white text-[#ff5010] font-bold px-6 py-3 rounded-full border-2 border-[#ff5010] hover:bg-[#ff5010] hover:text-white transition duration-300">
               Contact Sales
             </button>
+            </Link>
           </div>
         </div>
 

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";  
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="h-20 bg-amber-100 border-b-1 border-black flex justify-between items-center px-6 md:px-10">
+    <nav className="h-20 ++++++++++  flex justify-between items-center px-6 md:px-10">
       {/* ----- LEFT SIDE ----- */}
       <div className="flex items-center gap-2.5">
         <a href="#">
@@ -48,6 +49,7 @@ function Navbar() {
       {/* ----- RIGHT BUTTONS (hidden on mobile) ----- */}
       <div className="hidden md:flex justify-end items-center gap-4">
         <a href="#">
+          
           <button className="bg-white text-[#ff5010] font-bold px-4 py-2 rounded-full border-2 border-[#ff5010] hover:bg-[#ff5010] hover:text-white transition duration-300">
             Contact Sales
           </button>
