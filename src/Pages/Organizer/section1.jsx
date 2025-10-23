@@ -1,5 +1,9 @@
 import react from "react";
-import { Link } from "react-router-dom";             
+import { Link } from "react-router-dom";  
+import section1 from "../../assets/images/Organisations-Images/section1.webp";
+
+
+
 
 
 export default function Section() {
@@ -39,7 +43,7 @@ export default function Section() {
         {/* part right */}
 
         <div  className="  hidden sm:block sm:w-[45%] sm:h-[90%]   flex flex-col justify-center items-center  rounded-l-lg">
-            <img className="w-full h-full object-cover pr-5 rounded-l-lg " src="https://images.ctfassets.net/cocwkk0wzcrd/4L29qZnC9N8ZPyf9Qx2bke/e2a36dd340cfd72864c86e45da1f2cf2/a-creator-home__hero-001.jpg" ></img>
+            <img className="w-full h-full object-cover pr-5 rounded-l-lg " src={section1} />
         </div>
         
       </div>

@@ -1,4 +1,8 @@
 import react from "react";
+import Divgauche from "../../assets/images/Organisations-Images/Divgauche.jpg";
+import Divmilieu from "../../assets/images/Organisations-Images/Divmilieu.jpg"; 
+import Divdroite from "../../assets/images/Organisations-Images/Divdroite.png";
+
 
  export default function Section3(){ 
     return (  
@@ -10,7 +14,7 @@ import react from "react";
 
         {/* div de gauche */}
         <div className="w-full sm:w-1/3 h-full flex flex-col">
-          <img src="https://www.seneguide.com/images/cache/share_facebook/images/category/13/fete-senegal.jpg" alt="Photo d'un concert" className="w-full h-[60%] object-cover"/>
+          <img  alt="Photo d'un concert" className="w-full h-[60%] object-cover" src={Divgauche} />
           <h1 className="text-2xl font-bold">How to Sell Tickets: A Guidebook for Event Organizers</h1>
           <p className="">Eventbrite’s community of event creators sold 284 million tickets in 2022. Want to know how?</p><br />
           <a href="#"><div className="flex flex-row ">Discover how to host a sold-out event <span> 
@@ -24,7 +28,7 @@ import react from "react";
         {/* div du milieu */}
 
         <div className="w-full sm:w-1/3 h-full flex flex-col">
-          <img src="https://i.pinimg.com/736x/b5/07/7f/b5077fe5494f38bb95b2332b020b6ecb.jpg" alt="Photo d'un concert" className="w-full h-[60%] object-cover"/>
+          <img  alt="Photo d'un concert" className="w-full h-[60%] object-cover" src={Divmilieu} />
           <h1 className="text-2xl font-bold">9 Insider Tips for Building Your Events Community</h1>
           <p className="">Event creators who sustain thriving communities often start from scratch. It’s a mixture of strategies, programming, dedication, and guts that make steady growth — and significant impact — possible.</p>
           <a href="#"><div className="flex flex-row ">See how to build your community <span> 
@@ -38,7 +42,7 @@ import react from "react";
         {/* div de droite  */}
 
         <div className="w-full sm:w-1/3 h-full flex flex-col">
-          <img class="ImageBlock_image_block__DhORp" src="https://images.ctfassets.net/cocwkk0wzcrd/5c1PSWfvY7QiZy119dq2gh/c7ba3a58ffeeaaf516a07829b1f5f353/a--categories__food.png?w=1400 "className="w-full h-[60%] object-cover"/>
+          <img  alt="Photo d'un concert" className="w-full h-[60%] object-cover" src={Divdroite} />
           <h1 className="text-2xl font-bold">104 Event Themes + Real Examples to Inspire Your Next Event</h1>
           <p className="">Not feeling creative? Here’s a laundry list of event theme ideas to adopt or alter for your next event..</p> <br />
           <a href="#"><div className="flex flex-row ">Explore creative event themes  <span> 
