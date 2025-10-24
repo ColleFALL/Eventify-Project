@@ -5,6 +5,7 @@ import Index from "./Pages/Participant";
 import Hero from "./Pages/Participant/Hero";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import Icons from "./Pages/Participant/icons";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/hero" element={<Hero />} />
+         <Route path="Icons/" element={<Icons />} />
       </Routes>
 
       <Footer /> {/* Footer visible sur toutes les pages */}
