@@ -3,6 +3,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Hero.css";
+import Hero1 from "../../assets/Images/Participants-Images/Hero1.webp";
+import Hero2 from "../../assets/Images/Participants-Images/Hero2.webp";
+
 
 // Flèche "suivante"
 function NextArrow(props) {
@@ -40,25 +43,13 @@ const Hero = () => {
   const slides = [
     {
       id: 1,
-      image: "/images/halloween1.webp",
-      title: "This Halloween",
-      subtitle: "Make It Haunted",
-      buttonText: "Get Tickets Now"
+      image: Hero1,
     },
     {
       id: 2,
-      image: "/images/halloween2.webp",
-      title: "Spooky Night",
-      subtitle: "Join The Party",
-      buttonText: "Book Now"
+      image: Hero2,
     },
-    {
-      id: 3,
-      image: "/images/halloween3.webp",
-      title: "Trick or Treat",
-      subtitle: "Don't Miss Out",
-      buttonText: "Buy Tickets"
-    }
+    
   ];
 
   return (
@@ -70,7 +61,6 @@ const Hero = () => {
             <div className="slide-overlay">
               <h2>{slide.title}</h2>
               <h1>{slide.subtitle}</h1>
-              <button>{slide.buttonText}</button>
             </div>
           </div>
         ))}
