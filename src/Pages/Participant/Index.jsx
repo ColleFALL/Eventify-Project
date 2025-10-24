@@ -2,6 +2,8 @@
 import React from "react";
 import Hero from "./Hero";
 import Icons from "./icons";
+import EventList from "./EventList";
+
 
 const Index = () => {
   return (
@@ -9,6 +11,7 @@ const Index = () => {
      
       <Hero /> 
       <Icons/>
+      <EventList/>
     </div>
   );
 };
