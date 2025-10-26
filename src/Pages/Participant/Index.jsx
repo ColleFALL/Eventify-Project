@@ -6,6 +6,7 @@ import EventList from "./EventList";
 import CityCarousel from "./CityCarousel";
 
 
+
 const Index = () => {
   return (
     <div>

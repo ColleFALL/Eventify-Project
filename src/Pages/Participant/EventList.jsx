@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import EventCard from "./EventCard";
 import "./EventCard.css";
 import "./EventList.css";
+import part1 from "../../assets/Images/Participants-Images/part1.jpeg";
+import part2 from "../../assets/Images/Participants-Images/part2.jpeg";
+import part3 from "../../assets/Images/Participants-Images/part3.jpeg";
+import part4 from "../../assets/Images/Participants-Images/part4.jpeg";
+// import Hero2 from "../../assets/Images/Participants-Images/Hero2.webp";
 
 const EventList = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -11,7 +16,7 @@ const EventList = () => {
   const events = [
     {
       image:
-        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80",
+        part1,
       title: "SALTIS 2025",
       date: "Tue, Nov 25 • 8:00 AM",
       location: "Dakar, Senegal",
@@ -19,8 +24,8 @@ const EventList = () => {
       link: "#",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1536180931879-fd2d652efddc?auto=format&fit=crop&w=800&q=80",
+      image:part2,
+        
       title: "Business Mission to Senegal 2025",
       date: "Wed, Dec 3 • 9:00 AM",
       location: "King Fahd Palace Hôtel",
@@ -29,7 +34,7 @@ const EventList = () => {
     },
     {
       image:
-        "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80",
+        part3,
       title: "AFRICA LEGAL FORUM",
       date: "Sat, Nov 22 • 9:00 AM",
       location: "Noom Hotel Dakar Sea Plaza",
@@ -39,7 +44,7 @@ const EventList = () => {
     },
     {
       image:
-        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80",
+        part4,
       title: "CLUBLABO MEET UP Dakar 1",
       date: "Sat, Nov 1 • 9:00 AM",
       location: "Place du Souvenir Africain",
