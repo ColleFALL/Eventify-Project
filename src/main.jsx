@@ -1,9 +1,9 @@
-// main.jsx ou index.jsx
+// main.jsx
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
 import { BrowserRouter } from "react-router-dom";
-import "./index.css"; // ← obligatoire pour Tailwind
+import App from "./App.jsx";
+import "./index.css"; // obligatoire pour Tailwind ou le style global
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
