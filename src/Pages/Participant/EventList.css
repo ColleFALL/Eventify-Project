@@ -11,6 +11,7 @@
   font-weight: 700;
   margin-bottom: 16px;
   color: #111827;
+  text-align: center;
 }
 
 /* ✅ Barre de filtres */
@@ -21,6 +22,8 @@
   padding-bottom: 12px;
   margin-bottom: 20px;
   scrollbar-width: none;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .filter-bar::-webkit-scrollbar {
@@ -53,17 +56,54 @@
 /* ✅ Grille horizontale défilante */
 .event-section__scroll {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
-  overflow-x: auto;
-  padding-bottom: 8px;
   scroll-behavior: smooth;
 }
 
-.event-section__scroll::-webkit-scrollbar {
-  height: 8px;
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+  .event-section {
+    padding: 25px;
+  }
+
+  .event-section__title {
+    font-size: 20px;
+  }
 }
 
-.event-section__scroll::-webkit-scrollbar-thumb {
-  background: #d1d5db;
-  border-radius: 10px;
+@media (max-width: 768px) {
+  .filter-bar {
+    gap: 8px;
+  }
+
+  .filter-btn {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .event-section__scroll {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .event-section {
+    padding: 20px 10px;
+  }
+
+  .event-section__title {
+    font-size: 18px;
+  }
+
+  .filter-bar {
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+
+  .event-section__scroll {
+    gap: 16px;
+  }
 }

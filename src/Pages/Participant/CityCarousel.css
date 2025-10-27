@@ -12,6 +12,8 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 18px;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .city-carousel__title {
@@ -19,6 +21,9 @@
   color: #24143f;
   margin: 0;
   font-weight: 700;
+  flex: 1;
+  min-width: 220px;
+  text-align: left;
 }
 
 /* Flèches */
@@ -42,8 +47,10 @@
   box-shadow: 0 1px 6px rgba(15, 23, 42, 0.04);
   transition: transform 0.12s ease, background 0.12s ease;
 }
+
 .round-btn:hover {
   transform: translateY(-2px);
+  background: #f3f4f6;
 }
 
 /* Zone du slider */
@@ -67,6 +74,11 @@
   color: white;
   min-height: 240px;
   background: #eee;
+  transition: transform 0.3s ease;
+}
+
+.city-card:hover {
+  transform: scale(1.02);
 }
 
 .city-card__image img {
@@ -84,18 +96,6 @@
   padding: 22px;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.45), transparent 50%);
   box-sizing: border-box;
-}
-
-/* Badge optionnel */
-.city-card__badge {
-  display: inline-block;
-  background: rgba(255, 255, 255, 0.9);
-  color: #064e3b;
-  padding: 6px 10px;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 13px;
-  margin-bottom: 8px;
 }
 
 /* Texte */
@@ -144,4 +144,108 @@
   -webkit-appearance: none;
   width: 0;
   height: 0;
+}
+
+/* ==========================================================
+   ✅ RESPONSIVITÉ
+   ========================================================== */
+
+/* Grand écran */
+@media (max-width: 1200px) {
+  .city-carousel__title {
+    font-size: 26px;
+  }
+
+  .city-card__title {
+    font-size: 28px;
+  }
+}
+
+/* Tablettes */
+@media (max-width: 992px) {
+  .city-carousel {
+    width: 95%;
+    margin: 30px auto;
+  }
+
+  .city-carousel__title {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .city-carousel__header {
+    justify-content: center;
+  }
+
+  .city-card__image img {
+    height: 220px;
+  }
+
+  .city-card__title {
+    font-size: 24px;
+  }
+}
+
+/* Petites tablettes / mobiles horizontaux */
+@media (max-width: 768px) {
+  .city-carousel {
+    width: 96%;
+  }
+
+  .city-carousel__title {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .round-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
+
+  .city-card__image img {
+    height: 200px;
+  }
+
+  .city-card__title {
+    font-size: 20px;
+  }
+
+  .city-card__subtitle {
+    font-size: 14px;
+  }
+}
+
+/* Téléphones */
+@media (max-width: 480px) {
+  .city-carousel {
+    width: 94%;
+    margin: 20px auto;
+  }
+
+  .city-carousel__header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .city-carousel__controls {
+    margin-top: 8px;
+  }
+
+  .city-card {
+    min-height: 200px;
+  }
+
+  .city-card__image img {
+    height: 180px;
+  }
+
+  .city-card__title {
+    font-size: 18px;
+  }
+
+  .city-card__subtitle {
+    font-size: 13px;
+  }
 }
