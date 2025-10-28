@@ -60,13 +60,13 @@ const Navbar = ({ onSearchChange }) => {
             Connexion
           </Link>
            <Link
-            to="/login"
+            to="/register"
             className="bg-gray-200 text-gray-800 font-semibold py-2 px-5 rounded-full hover:bg-gray-300 transition hidden md:block"
           >
             Inscription
           </Link>
           <Link
-            to="/participant"
+            to="/CreateEvent"
             className="bg-purple-900 text-white font-semibold py-2 px-5 rounded-full hover:bg-purple-800 transition hidden md:block"
           >
             Creer un événement

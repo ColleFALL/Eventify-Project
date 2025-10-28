@@ -1,7 +1,7 @@
 import react from "react";
 
 
-export default function Section3() {
+export default function Section4() {
 
   return (
     <div className="w-full pb-[10px] sm:pb-0 h-auto  sm:h-160 mt-15 flex flex-col items-center bg-gray-100  text-black ">

@@ -1,6 +1,6 @@
 // src/App.jsx
 import React from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, Outlet } from "react-router-dom";
 import "./index.css";
 
 // 🔐 Pages Auth
@@ -19,42 +19,52 @@ import FooterORG from "./Pages/Organizer/Footer.jsx";
 import EventbriteDashboard from "./Pages/Organizer/CreateEvent.jsx";
 
 // 👥 Pages Participant
+import Participant from "./Pages/Participant";
 import Index from "./Pages/Participant";
 import Hero from "./Pages/Participant/Hero";
-import Navbar from "./Components/Navbar";
-import Footer from "./Components/Footer";
+import Navbar from "./Pages/Participant/Navbar.jsx";
 import Icons from "./Pages/Participant/icons";
 import EventList from "./Pages/Participant/EventList";
 import CityCarousel from "./Pages/Participant/CityCarousel";
 
+// Layout pour les pages participant
+const ParticipantLayout = () => (
+  <>
+    <Navbar />
+    <Outlet />
+  </>
+);
+
 function App() {
   return (
-    <>
-      <Routes>
-        {/* --- Auth Routes --- */}
-        <Route path="/" element={<Navigate to="/login" />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
+    <Routes>
+      {/* 🏠 Redirige la racine vers /participant */}
+      <Route path="/" element={<Navigate to="/participant" replace />} />
 
-        {/* --- Organizer Routes --- */}
-        <Route path="/organizer" element={<Organiser />} />
-        <Route path="/navbar-org" element={<Navbar1 />} />
-        <Route path="/section1" element={<Section1 />} />
-        <Route path="/section2" element={<Section2 />} />
-        <Route path="/section3" element={<Section3 />} />
-        <Route path="/section4" element={<Section4 />} />
-        <Route path="/footer-org" element={<FooterORG />} />
-        <Route path="/create-event" element={<EventbriteDashboard />} />
+      {/* 🔐 Authentification */}
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
 
-        {/* --- Participant Routes --- */}
-        <Route path="/participant" element={<Index />} />
-        <Route path="/hero" element={<Hero />} />
-        <Route path="/icons" element={<Icons />} />
-        <Route path="/event-list" element={<EventList />} />
-        <Route path="/city-carousel" element={<CityCarousel />} />
-      </Routes>
-    </>
+      {/* 🧑‍💼 Organizer */}
+      <Route path="/organiser" element={<Organiser />} />
+      <Route path="/navbar-org" element={<Navbar1 />} />
+      <Route path="/section1" element={<Section1 />} />
+      <Route path="/section2" element={<Section2 />} />
+      <Route path="/section3" element={<Section3 />} />
+      <Route path="/section4" element={<Section4 />} />
+      <Route path="/footer-org" element={<FooterORG />} />
+      <Route path="/create-event" element={<EventbriteDashboard />} />
+
+      {/* 👥 Participant avec Navbar */}
+      <Route path="/participant" element={<ParticipantLayout />}>
+        <Route index element={<Index />} />
+        <Route path="hero" element={<Hero />} />
+        <Route path="icons" element={<Icons />} />
+        <Route path="event-list" element={<EventList />} />
+        <Route path="city-carousel" element={<CityCarousel />} />
+      </Route>
+    </Routes>
   );
 }
 

@@ -32,6 +32,12 @@ export default function Login() {
       const user = userCredential.user;
 
       setMessage(`Bienvenue ${user.email}  Vous êtes connecté(e) !`);
+
+      // setMessage("Connexion réussie ✅ Vous allez être redirigé...");
+     setTimeout(() => {
+     navigate("/participant"); // redirige vers la page d’accueil
+     }, 1000);
+
       setForm({ email: "", password: "" });
     } catch (error) {
       console.error("Erreur de connexion :", error);

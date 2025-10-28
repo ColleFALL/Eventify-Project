@@ -1,12 +1,12 @@
 // src/pages/Auth/Register.jsx
 import { useState } from "react";
-import { useNavigate } from "react-router-dom"; // <-- importé
+import { useNavigate } from "react-router-dom"; // pour la redirection
 import { auth, db } from "../../../src/Firebase/FirebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 
 export default function Register() {
-  const navigate = useNavigate(); // <-- initialisation
+  const navigate = useNavigate(); // initialisation
   const [form, setForm] = useState({
     nom: "",
     prenom: "",
@@ -46,8 +46,10 @@ export default function Register() {
         createdAt: new Date().toISOString(),
       });
 
+      // Message de succès
       setMessage(`Bienvenue ${form.prenom} 🎉 Votre compte a été créé avec succès !`);
 
+      // Reset du formulaire
       setForm({
         nom: "",
         prenom: "",
@@ -56,6 +58,12 @@ export default function Register() {
         role: "participant",
         number: "",
       });
+
+      // 🔁 Redirection automatique vers la page de connexion
+      setTimeout(() => {
+        navigate("/login"); // redirige vers login après 1,5s
+      }, 1500);
+
     } catch (error) {
       console.error("Erreur d'inscription :", error);
       let errorMsg = "Une erreur est survenue.";
@@ -163,8 +171,7 @@ export default function Register() {
         <p className="mt-6 text-center text-gray-500">
           Déjà inscrit ?{" "}
           <span
-           onClick={() => navigate("/login")}
- // <-- lien actif vers la page Login
+            onClick={() => navigate("/login")}
             className="text-blue-500 font-medium cursor-pointer"
           >
             Se connecter
