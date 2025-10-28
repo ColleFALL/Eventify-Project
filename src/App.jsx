@@ -3,22 +3,22 @@ import React from "react";
 import { Routes, Route, Navigate, Outlet } from "react-router-dom";
 import "./index.css";
 
-// 🔐 Pages Auth
+//  Pages Auth
 import Register from "./Pages/Auth/Register";
 import Login from "./Pages/Auth/Login";
 import ForgotPassword from "./Pages/Auth/ForgotPassword";
 
-// 🧑‍💼 Pages Organisateur
+//  Pages Organisateur
 import Organiser from "./Pages/Organizer/Organiser";
 import Navbar1 from "./Pages/Organizer/NavbarORG";
-import Section1 from "./Pages/Organizer/section1";
-import Section2 from "./Pages/Organizer/section2";
-import Section3 from "./Pages/Organizer/section3";
-import Section4 from "./Pages/Organizer/section4";
-import FooterORG from "./Pages/Organizer/Footer";
-import EventbriteDashboard from "./Pages/Organizer/CreateEvent";
+import Section1 from "./Pages/Organizer/Section1.jsx";
+import Section2 from "./Pages/Organizer/Section2.jsx";
+import Section3 from "./Pages/Organizer/Section3.jsx";
+import Section4 from "./Pages/Organizer/Section4.jsx";
+import FooterORG from "./Pages/Organizer/Footer.jsx";
+import EventbriteDashboard from "./Pages/Organizer/CreateEvent.jsx";
 
-// 👥 Pages Participant
+//  Pages Participant
 // import Participant from "./Pages/Participant";
 import Index from "./Pages/Participant/Index";
 import Hero from "./Pages/Participant/Hero";
@@ -40,15 +40,15 @@ const ParticipantLayout = () => (
 function App() {
   return (
     <Routes>
-      {/* 🏠 Redirige la racine vers /participant */}
+      {/*  Redirige la racine vers /participant */}
       <Route path="/" element={<Navigate to="/participant" replace />} />
 
-      {/* 🔐 Authentification */}
+      {/*  Authentification */}
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
 
-      {/* 🧑‍💼 Organizer */}
+      {/*  Organizer */}
       <Route path="/organiser" element={<Organiser />} />
       <Route path="/navbar-org" element={<Navbar1 />} />
       <Route path="/section1" element={<Section1 />} />
@@ -58,7 +58,7 @@ function App() {
       <Route path="/footer-org" element={<FooterORG />} />
       <Route path="/create-event" element={<EventbriteDashboard />} />
 
-      {/* 👥 Participant avec Navbar */}
+      {/*  Participant avec Navbar */}
       <Route path="/participant" element={<ParticipantLayout />}>
         <Route index element={<Index />} />
         <Route path="hero" element={<Hero />} />

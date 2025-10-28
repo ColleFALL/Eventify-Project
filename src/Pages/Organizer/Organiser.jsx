@@ -1,9 +1,9 @@
 import react from "react"
 import Navbar from "./NavbarORG"
-import Section from "./section1"
-import Section2 from "./section2"
-import Section3 from "./section3"
-import Section4 from "./section4"
+import Section from "./Section1"
+import Section2 from "./Section2"
+import Section3 from "./Section3"
+import Section4 from "./Section4"
 import Footer from "./Footer"
 
 
