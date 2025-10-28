@@ -26,12 +26,14 @@ import Navbar from "./Pages/Participant/Navbar.jsx";
 import Icons from "./Pages/Participant/icons";
 import EventList from "./Pages/Participant/EventList";
 import CityCarousel from "./Pages/Participant/CityCarousel";
+import Footer from "./Pages/Participant/Footer.jsx";
 
 // Layout pour les pages participant
 const ParticipantLayout = () => (
   <>
     <Navbar />
     <Outlet />
+    <Footer/>
   </>
 );
 
@@ -63,8 +65,10 @@ function App() {
         <Route path="icons" element={<Icons />} />
         <Route path="event-list" element={<EventList />} />
         <Route path="city-carousel" element={<CityCarousel />} />
+        
       </Route>
     </Routes>
+    
   );
 }
 
