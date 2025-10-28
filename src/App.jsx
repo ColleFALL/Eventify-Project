@@ -9,24 +9,24 @@ import Login from "./Pages/Auth/Login";
 import ForgotPassword from "./Pages/Auth/ForgotPassword";
 
 // 🧑‍💼 Pages Organisateur
-import Organiser from "./Pages/Organizer/Organiser.jsx";
-import Navbar1 from "./Pages/Organizer/NavbarORG.jsx";
-import Section1 from "./Pages/Organizer/section1.jsx";
-import Section2 from "./Pages/Organizer/section2.jsx";
-import Section3 from "./Pages/Organizer/section3.jsx";
-import Section4 from "./Pages/Organizer/section4.jsx";
-import FooterORG from "./Pages/Organizer/Footer.jsx";
-import EventbriteDashboard from "./Pages/Organizer/CreateEvent.jsx";
+import Organiser from "./Pages/Organizer/Organiser";
+import Navbar1 from "./Pages/Organizer/NavbarORG";
+import Section1 from "./Pages/Organizer/section1";
+import Section2 from "./Pages/Organizer/section2";
+import Section3 from "./Pages/Organizer/section3";
+import Section4 from "./Pages/Organizer/section4";
+import FooterORG from "./Pages/Organizer/Footer";
+import EventbriteDashboard from "./Pages/Organizer/CreateEvent";
 
 // 👥 Pages Participant
-import Participant from "./Pages/Participant";
-import Index from "./Pages/Participant";
+// import Participant from "./Pages/Participant";
+import Index from "./Pages/Participant/Index";
 import Hero from "./Pages/Participant/Hero";
-import Navbar from "./Pages/Participant/Navbar.jsx";
+import Navbar from "./Pages/Participant/Navbar";
 import Icons from "./Pages/Participant/icons";
 import EventList from "./Pages/Participant/EventList";
 import CityCarousel from "./Pages/Participant/CityCarousel";
-import Footer from "./Pages/Participant/Footer.jsx";
+import Footer from "./Pages/Participant/Footer";
 
 // Layout pour les pages participant
 const ParticipantLayout = () => (
