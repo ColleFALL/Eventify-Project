@@ -23,61 +23,24 @@ const Icons = () => {
   ];
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        gap: "40px",
-        flexWrap: "wrap",
-        padding: "30px",
-      }}
-    >
+    <div className="flex flex-wrap justify-center gap-8 sm:gap-10 px-4 py-10">
       {categories.map((item, index) => (
         <div
           key={index}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
+          className="flex flex-col items-center text-center w-[100px] sm:w-[120px] md:w-[140px]"
         >
-          <div
-            style={{
-              position: "relative",
-              width: "100px",
-              height: "100px",
-              borderRadius: "50%",
-              border: "2px solid #e0e7ff",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
+          {/* Cercle icône */}
+          <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full border-2 border-indigo-200 flex items-center justify-center hover:bg-indigo-50 transition duration-300">
             {item.icon}
             {item.badge && (
-              <span
-                style={{
-                  position: "absolute",
-                  bottom: "-10px",
-                  backgroundColor: "#6d28d9",
-                  color: "white",
-                  padding: "2px 8px",
-                  borderRadius: "12px",
-                  fontSize: "12px",
-                }}
-              >
+              <span className="absolute -bottom-2 bg-indigo-700 text-white px-2 py-[2px] rounded-full text-xs">
                 {item.badge}
               </span>
             )}
           </div>
-          <p
-            style={{
-              marginTop: "10px",
-              fontWeight: "500",
-              textAlign: "center",
-              color: "#111827",
-            }}
-          >
+
+          {/* Nom */}
+          <p className="mt-3 text-sm sm:text-base font-medium text-gray-900">
             {item.name}
           </p>
         </div>

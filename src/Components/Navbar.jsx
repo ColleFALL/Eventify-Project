@@ -1,21 +1,23 @@
-// src/Components/Navbar.jsx
-import React from "react";
-import { IoSearch, IoLocationSharp, IoMenu } from "react-icons/io5";
+import React, { useState } from "react";
+import { IoSearch, IoLocationSharp, IoMenu, IoClose } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 const Navbar = ({ onSearchChange }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         {/* --- Logo --- */}
         <Link to="/" className="flex items-center space-x-1">
-          <span className="text-2xl font-extrabold text-red-600">eventbrite</span>
+          <span className="text-2xl font-extrabold text-red-600">
+            eventbrite
+          </span>
         </Link>
 
-        {/* --- Barre de recherche --- */}
-        <div className="flex-1 max-w-3xl mx-6 hidden sm:block">
-          <div className="flex border border-gray-300 rounded-full overflow-hidden">
-            {/* --- Recherche par mot-clé --- */}
+        {/* --- Barre de recherche (desktop uniquement) --- */}
+        <div className="hidden lg:flex flex-1 max-w-3xl mx-6">
+          <div className="flex border border-gray-300 rounded-full overflow-hidden w-full">
             <div className="flex items-center p-3 flex-grow">
               <IoSearch className="text-gray-500 text-xl mr-2" />
               <input
@@ -26,8 +28,7 @@ const Navbar = ({ onSearchChange }) => {
               />
             </div>
 
-            {/* --- Filtre par lieu --- */}
-            <div className="hidden md:flex items-center p-3 border-l border-gray-200">
+            <div className="flex items-center p-3 border-l border-gray-200 w-48">
               <IoLocationSharp className="text-gray-500 text-xl mr-2" />
               <input
                 type="text"
@@ -42,23 +43,22 @@ const Navbar = ({ onSearchChange }) => {
           </div>
         </div>
 
-        {/* --- Actions utilisateur --- */}
-        <div className="flex items-center space-x-3">
-          {/* Ta partie Participant */}
+        {/* --- Actions utilisateur (desktop) --- */}
+        <div className="hidden md:flex items-center space-x-3">
           <Link
             to="/participant"
-            className="bg-purple-900 text-white font-semibold py-2 px-5 rounded-full hover:bg-purple-800 transition hidden md:block"
+            className="bg-purple-900 text-white font-semibold py-2 px-5 rounded-full hover:bg-purple-800 transition"
           >
-            Participer à un événements
+            Participer
           </Link>
 
-          {/* Placeholder pour le membre "Auth" */}
           <Link
             to="/login"
-            className="bg-gray-200 text-gray-800 font-semibold py-2 px-5 rounded-full hover:bg-gray-300 transition hidden md:block"
+            className="bg-gray-200 text-gray-800 font-semibold py-2 px-5 rounded-full hover:bg-gray-300 transition"
           >
             Connexion
           </Link>
+<<<<<<< HEAD
            <Link
             to="/register"
             className="bg-gray-200 text-gray-800 font-semibold py-2 px-5 rounded-full hover:bg-gray-300 transition hidden md:block"
@@ -71,13 +71,80 @@ const Navbar = ({ onSearchChange }) => {
           >
             Creer un événement
           </Link>
+=======
 
-          {/* Placeholder pour un futur menu mobile */}
-          <button className="text-gray-600 hover:text-gray-900 sm:hidden">
-            <IoMenu className="text-3xl" />
-          </button>
+          <Link
+            to="/register"
+            className="bg-gray-200 text-gray-800 font-semibold py-2 px-5 rounded-full hover:bg-gray-300 transition"
+          >
+            Inscription
+          </Link>
+>>>>>>> f2b1579aae6f168b854621035a321d697f57683b
+
+          <Link
+            to="/create-event"
+            className="bg-purple-900 text-white font-semibold py-2 px-5 rounded-full hover:bg-purple-800 transition"
+          >
+            Créer un événement
+          </Link>
         </div>
+
+        {/* --- Menu mobile (icône burger) --- */}
+        <button
+          className="text-gray-700 text-3xl md:hidden"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <IoClose /> : <IoMenu />}
+        </button>
       </div>
+
+      {/* --- Menu mobile déroulant --- */}
+      {menuOpen && (
+        <div className="md:hidden bg-white border-t border-gray-200 shadow-md">
+          <div className="flex flex-col p-4 space-y-3">
+            <input
+              type="text"
+              placeholder="Rechercher un événement..."
+              className="border border-gray-300 rounded-full px-4 py-2 focus:outline-none"
+              onChange={(e) => onSearchChange?.(e.target.value)}
+            />
+
+            <input
+              type="text"
+              placeholder="Lieu"
+              className="border border-gray-300 rounded-full px-4 py-2 focus:outline-none"
+            />
+
+            <Link
+              to="/participant"
+              className="bg-purple-900 text-white text-center py-2 rounded-full hover:bg-purple-800"
+            >
+              Participer
+            </Link>
+
+            <Link
+              to="/login"
+              className="bg-gray-200 text-gray-800 text-center py-2 rounded-full hover:bg-gray-300"
+            >
+              Connexion
+            </Link>
+
+            <Link
+              to="/register"
+              className="bg-gray-200 text-gray-800 text-center py-2 rounded-full hover:bg-gray-300"
+            >
+              Inscription
+            </Link>
+
+            <Link
+              to="/create-event"
+              className="bg-purple-900 text-white text-center py-2 rounded-full hover:bg-purple-800"
+            >
+              Créer un événement
+            </Link>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
