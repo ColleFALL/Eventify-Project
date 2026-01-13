@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+ import React from "react";
+
 import Toukitravel from "../../assets/images/Organisations-Images/Toukitravel.jpeg";
 import PartenaireToukiTravel from "../../assets/images/Organisations-Images/PartenaireToukiTravel.jpeg";
 // import PartenaireToukiTravel from "../../assets/images/Organisations-Images/PartenaireToukiTravel.jpeg";
@@ -53,27 +53,11 @@ export default function ToukiTravelDashboard() {
       {/* Header */}
       <header className="flex justify-between items-center px-10 py-6 border-b bg-white shadow-sm">
         <h1 className="text-3xl font-bold text-orange-600">
-          Bienvenue sur Travel Touki Service
+          Bienvenue sur Touki Service
         </h1>
-        <Link to="/section1">
-          <button className="flex items-center gap-2 px-4 py-2 border border-orange-500 text-orange-500 rounded-lg hover:bg-orange-50 transition">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-5 h-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 12H3m6 6l-6-6 6-6m6 12V6a2 2 0 012-2h3"
-              />
-            </svg>
-            Retour à l'accueil
-          </button>
-        </Link>
+        <button className="flex items-center gap-2 px-4 py-2 border border-orange-500 text-orange-500 rounded-lg hover:bg-orange-50 transition">
+          Retour à l'accueil
+        </button>
       </header>
 
       <main className="px-10 py-8 w-full">
@@ -113,7 +97,7 @@ export default function ToukiTravelDashboard() {
                 rows="3"
               />
               <div className="flex justify-end">
-                <button className="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition ">
+                <button className="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition">
                   Créer le rendez-vous
                 </button>
               </div>
@@ -159,7 +143,7 @@ export default function ToukiTravelDashboard() {
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-6">Newsletters</h2>
 
-          <div className="bg-gray-100 rounded-2xl p-6 shadow-sm">
+          <div className="bg-white rounded-2xl p-6 shadow-sm">
             <div className="grid lg:grid-cols-2 gap-8 items-start">
               {/* Aperçu Newsletter */}
               <div className="border rounded-xl p-6 bg-gray-50">
