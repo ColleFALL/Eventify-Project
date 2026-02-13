@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Toukitravel from "../../assets/images/Organisations-Images/Toukitravel.jpeg";
-import PartenaireToukiTravel from "../../assets/images/organisations-images/partenairetoukitravel.jpg";
-                                  
+import PartenaireToukiTravel from "../../assets/Images/Organisations-Images/PartenaireToukiTravel.jpeg";
+                                          
 // import PartenaireToukiTravel from "../../assets/images/Organisations-Images/PartenaireToukiTravel.jpeg";
 
 export default function ToukiTravelDashboard() {
