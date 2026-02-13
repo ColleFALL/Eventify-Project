@@ -1,5 +1,4 @@
  import React from "react";
-
 import Toukitravel from "../../assets/images/Organisations-Images/Toukitravel.jpeg";
 import PartenaireToukiTravel from "../../assets/images/Organisations-Images/PartenaireToukiTravel.jpeg";
 // import PartenaireToukiTravel from "../../assets/images/Organisations-Images/PartenaireToukiTravel.jpeg";
