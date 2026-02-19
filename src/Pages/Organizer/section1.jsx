@@ -228,10 +228,10 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 // images
-import section1 from "../../assets/images/Organisations-Images/section1.webp";
-import Gauche from "../../assets/images/Organisations-Images/Thailande.jpg";
-import Milieu from "../../assets/images/Organisations-Images/Japon.jpg";
-import Droite from "../../assets/images/Organisations-Images/Greece.jpg";
+import section1 from "../../assets/Images/Organisations-Images/section1.webp";
+import Gauche from "../../assets/Images/Organisations-Images/Thailande.jpg";
+import Milieu from "../../assets/Images/Organisations-Images/Japon.jpg";
+import Droite from "../../assets/Images/Organisations-Images/Greece.jpg";
 
 export default function Page() {
   const [menuOpen, setMenuOpen] = useState(false);
