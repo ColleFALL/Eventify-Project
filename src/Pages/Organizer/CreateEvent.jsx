@@ -6,48 +6,56 @@ import PartenaireToukiTravel from "../../assets/Images/Organisations-Images/Part
 // import PartenaireToukiTravel from "../../assets/images/Organisations-Images/PartenaireToukiTravel.jpeg";
 
 export default function ToukiTravelDashboard() {
-  const destinations = [
-    {
-      name: "France",
-      desc: "Voyages d'etudes,Voyages culturels et tourisme urbain  .",
-      image: "https://via.placeholder.com/400x220?text=France",
-    },
-    {
-      name: "Dubaï",
-      desc: " Voyages d'etudes ,Luxe, shopping, tourisme moderne et expériences premium.",
-      image: "https://via.placeholder.com/400x220?text=Dubai",
-    },
-    {
-      name: "Maroc",
-      desc: " Voyages d'etudes, Culture, désert, villes impériales et artisanat local.",
-      image: "https://via.placeholder.com/400x220?text=Maroc",
-    },
-    {
-      name: "Angleterre",
-      desc: "Voyages d'etudes,Tourisme urbain, affaires et patrimoine historique.",
-      image: "https://via.placeholder.com/400x220?text=Angleterre",
-    },
-    {
-      name: "Canada",
-      desc: "Voyages d'etudes, immigration, nature et tourisme longue durée.",
-      image: "https://via.placeholder.com/400x220?text=Canada",
-    },
-    {
-      name: "États-Unis",
-      desc: "Tourisme, business,et grands événements.",
-      image: "https://via.placeholder.com/400x220?text=USA",
-    },
-    {
-      name: "Chine",
-      desc: " Voyages d'etudes ,Voyages d'affaires et tourisme culturel.",
-      image: "https://via.placeholder.com/400x220?text=Chine",
-    },
-    {
-      name: "Luxembourg",
-      desc: " Voyages d'etudes ,Voyages d'affaires et tourisme culturel.",
-      image: "https://via.placeholder.com/400x220?text=Chine",
-    },
-  ];
+const destinations = [
+  {
+    name: "France",
+    desc: "Voyages d'études, voyages culturels et tourisme urbain.",
+    image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=80",
+    tag: "Europe",
+  },
+  {
+    name: "Dubaï",
+    desc: "Luxe, shopping, tourisme moderne et expériences premium.",
+    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80",
+    tag: "Moyen-Orient",
+  },
+  {
+    name: "Maroc",
+    desc: "Culture, désert, villes impériales et artisanat local.",
+    image: "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=600&q=80",
+    tag: "Afrique",
+  },
+  {
+    name: "Angleterre",
+    desc: "Tourisme urbain, affaires et patrimoine historique.",
+    image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=80",
+    tag: "Europe",
+  },
+  {
+    name: "Canada",
+    desc: "Immigration, nature sauvage et tourisme longue durée.",
+    image: "https://images.unsplash.com/photo-1517935706615-2717063c2225?w=600&q=80",
+    tag: "Amérique",
+  },
+  {
+    name: "États-Unis",
+    desc: "Tourisme, business et grands événements internationaux.",
+    image: "https://images.unsplash.com/photo-1485738422979-f5c462d49f74?w=600&q=80",
+    tag: "Amérique",
+  },
+  {
+    name: "Chine",
+    desc: "Voyages d'affaires, tourisme culturel et grandes merveilles.",
+    image: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=600&q=80",
+    tag: "Asie",
+  },
+  {
+    name: "Luxembourg",
+    desc: "Voyages d'études, affaires et tourisme au cœur de l'Europe.",
+    image: "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=600&q=80",
+    tag: "Europe",
+  },
+];
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 font-sans w-full">
@@ -80,7 +88,18 @@ export default function ToukiTravelDashboard() {
       <main className="px-10 py-8 w-full">
         {/* Prise de rendez-vous */}
         <section className="mb-12">
+                <div className="bg-gradient-to-r from-[#ff5112] via-[#ff7d6d] to-[#ffb855] text-white px-10 py-12">
+        <p className="text-orange-100 text-sm font-medium uppercase tracking-widest mb-2">Votre agence de confiance</p>
+        <h2 className="text-4xl font-extrabold mb-3 leading-tight">
+          Voyagez avec sérénité.<br />Confiez-nous votre projet.
+        </h2>
+        <p className="text-orange-100 max-w-lg">
+          Visas, études à l'étranger, tourisme — nous vous accompagnons à chaque étape vers votre destination de rêve.
+        </p>
+      </div>
+      <br />
           <h2 className="text-2xl font-semibold mb-6">Prise de rendez-vous</h2>
+          
 
           <div className="grid lg:grid-cols-2 gap-8 bg-blue- rounded-2xl p-6 shadow-sm">
             {/* Formulaire */}
@@ -131,25 +150,28 @@ export default function ToukiTravelDashboard() {
           </div>
         </section>
         {/* Destinations */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">Nos destinations</h2>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <section className="mb-16">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-1 h-7 bg-orange-500 rounded-full" />
+            <h2 className="text-2xl font-bold">Nos destinations</h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {destinations.map((dest, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition"
-              >
-                <img
-                  src={dest.image}
-                  alt={dest.name}
-                  className="h-40 w-full object-cover"
-                />
+              <div key={i} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group cursor-pointer border border-gray-100">
+                <div className="relative h-44 overflow-hidden">
+                  <img src={dest.image} alt={dest.name}
+                    className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    onError={(e) => { e.target.src = `https://via.placeholder.com/400x220/f97316/ffffff?text=${dest.name}`; }} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  <span className="absolute top-3 right-3 bg-white/90 text-orange-600 text-xs font-semibold px-2 py-1 rounded-full">
+                    {dest.tag}
+                  </span>
+                </div>
                 <div className="p-4">
-                  <h3 className="text-lg font-semibold mb-2">{dest.name}</h3>
-                  <p className="text-sm text-gray-600">{dest.desc}</p>
-                  <button className="mt-4 text-orange-600 hover:underline text-sm">
-                    Voir les détails
+                  <h3 className="text-base font-bold mb-1">{dest.name}</h3>
+                  <p className="text-xs text-gray-500 leading-relaxed">{dest.desc}</p>
+                  <button className="mt-3 text-orange-500 hover:text-orange-700 text-xs font-semibold flex items-center gap-1 group/btn">
+                    Voir les détails <span className="group-hover/btn:translate-x-1 transition-transform">→</span>
                   </button>
                 </div>
               </div>
@@ -233,10 +255,15 @@ export default function ToukiTravelDashboard() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-200 border-t border-orange-500 py-6 text-gray-600">
-        <div className="max-w-7xl mx-auto px-4 flex justify-between">
-          <span>© 2026 Touki Travel</span>
-          <span className="font-bold text-orange-500">✈️ Touki Travel</span>
+      <footer className="bg-gray-200 border-t border-[#ff5010] py-8">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-gray-600">
+            © 2025 Touki Travel — Tous droits réservés
+          </p>
+          <div className="flex gap-4 font-semibold">
+            <Link to="/mentions">Mentions légales</Link>
+            <Link to="/contact">Contact</Link>
+          </div>
         </div>
       </footer>
     </div>

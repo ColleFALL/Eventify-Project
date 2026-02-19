@@ -228,7 +228,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 // images
-import section1 from "../../assets/Images/Organisations-Images/section1.webp";
+import ttsphoto from "../../assets/Images/Organisations-Images/TTSphoto.png";
 import Gauche from "../../assets/Images/Organisations-Images/Thailande.jpg";
 import Milieu from "../../assets/Images/Organisations-Images/Japon.jpg";
 import Droite from "../../assets/Images/Organisations-Images/Greece.jpg";
@@ -247,6 +247,9 @@ export default function Page() {
       {/* ================= NAVBAR ================= */}
       <nav className="sticky top-0 z-50 bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
+                    <div className="w-9 h-9 rounded-full bg-orange-500 flex items-center justify-center">
+            <span className="text-white font-black text-sm">TT</span>
+          </div>
           <div className="flex items-center gap-2.5">
             <h1 className="text-xl font-bold text-[#ff5010]"> Travel Touki Service</h1>
           </div>
@@ -317,7 +320,7 @@ export default function Page() {
                   Demander un devis
                 </button>
               </Link>
-              <Link to="/creat-event">
+              <Link to="/create-event">
                 <button className="bg-white text-[#ff5010] px-6 py-3 rounded-full border-2 border-[#ff5010]">
                   Parler à un conseiller
                 </button>
@@ -325,11 +328,11 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="hidden sm:block sm:w-[45%]">
+          <div className="hidden sm:block sm:w-[45%] p-6">
             <img
-              src={section1}
+              src={ttsphoto}
               alt="Voyage sur mesure et destinations de rêve"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover rounded-lg"
             />
           </div>
         </div>
@@ -462,7 +465,7 @@ export default function Page() {
                   <br />
                   Touki Travel
                   <br />
-                  Avenue Cheikh Anta Diop,
+                  Liberté 6 Extension,
                   <br />
                   Dakar, Sénégal
                 </p>
@@ -493,14 +496,14 @@ export default function Page() {
 
             {/* Google Map */}
             <div className="w-full h-[450px] rounded-2xl overflow-hidden shadow-lg">
-              <iframe
-                title="Localisation Touki Travel"
-                src="https://www.google.com/maps?q=Avenue%20Cheikh%20Anta%20Diop%20Dakar&output=embed"
-                className="w-full h-full border-0"
-                loading="lazy"
-                allowFullScreen=""
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+<iframe
+  title="Localisation Touki Travel"
+  src="https://www.google.com/maps?q=14.73032,-17.46359&hl=fr&z=16&output=embed"
+  className="w-full h-full border-0"
+  loading="lazy"
+  allowFullScreen=""
+  referrerPolicy="no-referrer-when-downgrade"
+/>
             </div>
           </div>
         </div>
