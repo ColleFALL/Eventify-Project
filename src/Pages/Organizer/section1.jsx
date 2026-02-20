@@ -247,11 +247,14 @@ export default function Page() {
       {/* ================= NAVBAR ================= */}
       <nav className="sticky top-0 z-50 bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
-                    <div className="w-9 h-9 rounded-full bg-orange-500 flex items-center justify-center">
+          <div className="w-9 h-9 rounded-full bg-orange-500 flex items-center justify-center">
             <span className="text-white font-black text-sm">TT</span>
           </div>
           <div className="flex items-center gap-2.5">
-            <h1 className="text-xl font-bold text-[#ff5010]"> Travel Touki Service</h1>
+            <h1 className="text-xl font-bold text-[#ff5010]">
+              {" "}
+              Travel Touki Service
+            </h1>
           </div>
 
           <div className="hidden md:flex gap-6">
@@ -328,7 +331,7 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="hidden sm:block sm:w-[45%] p-6">
+          <div className="hidden sm:block sm:w-[45%] p-10">
             <img
               src={ttsphoto}
               alt="Voyage sur mesure et destinations de rêve"
@@ -479,7 +482,7 @@ export default function Page() {
                 </p>
 
                 <p>
-                  📞 <strong>Téléphone :</strong> +221 77 000 00 00
+                  📞 <strong>Téléphone :</strong> +221 77 598 41 91
                   <br />
                   ✉️ <strong>Email :</strong> contact@toukitravel.com
                 </p>
@@ -496,14 +499,14 @@ export default function Page() {
 
             {/* Google Map */}
             <div className="w-full h-[450px] rounded-2xl overflow-hidden shadow-lg">
-<iframe
-  title="Localisation Touki Travel"
-  src="https://www.google.com/maps?q=14.73032,-17.46359&hl=fr&z=16&output=embed"
-  className="w-full h-full border-0"
-  loading="lazy"
-  allowFullScreen=""
-  referrerPolicy="no-referrer-when-downgrade"
-/>
+              <iframe
+                title="Localisation Touki Travel"
+                src="https://www.google.com/maps?q=14.73032,-17.46359&hl=fr&z=16&output=embed"
+                className="w-full h-full border-0"
+                loading="lazy"
+                allowFullScreen=""
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
         </div>
