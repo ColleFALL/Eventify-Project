@@ -53,7 +53,7 @@ export default function ToukiTravelDashboard() {
         </Link>
       </header>
 
-      <main className="px-10 py-8 w-full space-y-12">
+     <main className="w-[90%] mx-auto lg:w-full lg:px-10 py-8 space-y-12">
         {/* Prise de rendez-vous */}
         <section>
           <div className="bg-gradient-to-r from-[#ff5112] via-[#ff7d6d] to-[#ffb855] text-white px-10 py-12 rounded-2xl">
